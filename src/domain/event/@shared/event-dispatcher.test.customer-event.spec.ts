@@ -1,5 +1,5 @@
 import CustomerCreatedEvent from "../customer/customer-created.event";
-import EnviaConsoleLog1Handler from "../customer/handler/envia-console-log.handler";
+import EnviaConsoleLog1Handler from "../customer/handler/envia-console-log1.handler";
 import EnviaConsoleLog2Handler from "../customer/handler/envia-console-log2.handler";
 import EventDispatcher from "./event-dispatcher";
 
