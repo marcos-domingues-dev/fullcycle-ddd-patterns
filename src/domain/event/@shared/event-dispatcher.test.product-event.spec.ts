@@ -2,9 +2,9 @@ import SendEmailWhenProductIsCreatedHandler from "../product/handler/send-email-
 import ProductCreatedEvent from "../product/product-created.event";
 import EventDispatcher from "./event-dispatcher";
 
-describe("event dispatcher unit test", () => {
+describe("event dispatcher 'Product' unit test", () => {
 
-  it("should register an event handler", () => {
+  it("should register a product event handler", () => {
     
     const eventDispatcher = new EventDispatcher();
     const eventHandler = new SendEmailWhenProductIsCreatedHandler();
@@ -22,10 +22,10 @@ describe("event dispatcher unit test", () => {
     expect(
       eventDispatcher.getEventHandlers["ProductCreatedEvent"][0]
     ).toMatchObject(eventHandler);
-  })
+  });
 
 
-  it("should unregister an event handler", () => {
+  it("should unregister a product event handler", () => {
     const eventDispatcher = new EventDispatcher();
     const eventHandler = new SendEmailWhenProductIsCreatedHandler();
 
@@ -44,7 +44,7 @@ describe("event dispatcher unit test", () => {
     expect(
       eventDispatcher.getEventHandlers["ProductCreatedEvent"].length
     ).toBe(0);
-  })
+  });
 
 
   it("should unregister all events handler", () => {
@@ -62,7 +62,7 @@ describe("event dispatcher unit test", () => {
     expect(
       eventDispatcher.getEventHandlers["ProductCreatedEvent"]
     ).toBeUndefined();
-  })
+  });
 
 
   it("should notify all events handler", () => {
@@ -86,6 +86,6 @@ describe("event dispatcher unit test", () => {
     eventDispatcher.notify(productCreatedEvent);
 
     expect(spyEventHandler).toHaveBeenCalled();
-  })
+  });
 
 })
