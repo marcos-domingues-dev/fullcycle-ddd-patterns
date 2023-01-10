@@ -10,6 +10,8 @@
     "typescript": "^4.9.4"
   },
   "scripts": {
+    "prebuild": "if exist \"dist\" (rmdir /Q /S \"dist\")",
+    "build": "tsc",
     "test": "jest"
   },
   "dependencies": {
